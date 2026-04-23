@@ -25,7 +25,7 @@ def checar_site(url) -> None:
             log_info(logger, f'{url} OK')
         else:
             log_info(logger, f'ALERTA: {url} status {resp.status_code}')
-    except Exception as e: Exception:
+    except Exception as e:
         log_info(logger, f'ALERTA: {url} down - {e}')
 
 schedule.every(10).seconds.do(checar_site, 'https://www.google.com')
@@ -33,4 +33,3 @@ schedule.every(10).seconds.do(checar_site, 'https://www.google.com')
 while True:
     schedule.run_pending()
     time.sleep(1)
-

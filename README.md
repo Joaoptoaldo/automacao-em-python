@@ -44,14 +44,14 @@ automacao-em-python/
 ## Exemplos Rápidos (Copy-Paste)
 Veja mais exemplos em [examples/](examples/)
 
-### 1. **Renomear 100+ arquivos** (segundos)
+### 1. **Renomear arquivos** (adiciona prefixo `auto_`)
 ```bash
-python automacao_tarefas/renomear_arquivos.py ./pasta --padrao "relatorio_%Y%m%d_%03d"
+python automacao_tarefas/renomear_arquivos.py [pasta]
 ```
 
-### 2. **Web Scraping** (preços/notícias)
+### 2. **Web Scraping** (manchetes/notícias)
 ```bash
-python automacao_tarefas/web_scraping.py --url "amazon.com" --seletor ".price"
+python automacao_tarefas/web_scraping.py
 ```
 
 ### 3. **Bot Telegram** (automação)
@@ -61,12 +61,12 @@ python integracao_apis/telegram_bot.py
 
 ### 4. **Análise Sentimentos** (reviews)
 ```bash
-python ia_aplicada/analise_sentimentos.py --texto "Amei o produto, entrega rápida!"
+python ia_aplicada/analise_sentimentos.py
 ```
 
-### 5. **Relatório Excel** (vendas)
+### 5. **Relatório Excel/PDF** (vendas)
 ```bash
-python automacao_escritorio/gerar_relatorios.py dados.csv
+python automacao_escritorio/gerar_relatorios.py
 ```
 
 ### 6. **Dashboard Interativo**
@@ -76,7 +76,7 @@ streamlit run projetos_exemplo/dashboard_dados.py
 
 ### 7. **Monitor Site** (alertas)
 ```bash
-python monitoramento_alertas/monitor_sites.py exemplo.com
+python monitoramento_alertas/monitor_sites.py
 ```
 
 ## Configuração (.env)
@@ -100,7 +100,7 @@ DB_PASS=senha
 ```
 requests pandas openpyxl selenium beautifulsoup4
 transformers torch pytest python-dotenv streamlit
-python-telegram-bot tweepy openai
+python-telegram-bot tweepy
 ```
 
 ##  Testes

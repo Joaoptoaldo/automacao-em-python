@@ -10,16 +10,17 @@ import pandas as pd
 import numpy as np
 from utils.helpers import setup_logger
 
-st.title('Dashboard Automatizado de Dados')
+st.title("Dashboard Automatizado de Dados")
 
 # Dados mock
-df = pd.DataFrame({
-    'Vendas': np.random.randn(100).cumsum(),
-    'Data': pd.date_range('2024-01-01', periods=100)
-})
+df = pd.DataFrame(
+    {
+        "Vendas": np.random.randn(100).cumsum(),
+        "Data": pd.date_range("2024-01-01", periods=100),
+    }
+)
 
-st.line_chart(df.set_index('Data'))
+st.line_chart(df.set_index("Data"))
 
 st.dataframe(df.tail())
-st.metric('Média Vendas', df['Vendas'].mean())
-
+st.metric("Média Vendas", df["Vendas"].mean())

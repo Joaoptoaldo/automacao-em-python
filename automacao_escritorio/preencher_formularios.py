@@ -13,6 +13,7 @@ from selenium.webdriver.common.by import By
 from utils.helpers import setup_logger, log_info
 import time
 
+
 def preencher_form() -> None:
     """
     Preenche automaticamente o campo de busca do Google usando Selenium.
@@ -23,17 +24,17 @@ def preencher_form() -> None:
     - Aguarda 2 segundos e registra o log.
     - Encerra o navegador.
     """
-    logger: Logger = setup_logger('form')
+    logger: Logger = setup_logger("form")
     driver = webdriver.Chrome()
-    driver.get('https://www.google.com')
+    driver.get("https://www.google.com")
     # Exemplo busca
-    campo = driver.find_element(By.NAME, 'q')
-    campo.send_keys('Automação Python')
+    campo = driver.find_element(By.NAME, "q")
+    campo.send_keys("Automação Python")
     campo.submit()
     time.sleep(2)
-    log_info(logger, 'Form preenchido e enviado!')
+    log_info(logger, "Form preenchido e enviado!")
     driver.quit()
 
-if __name__ == '__main__':
-    preencher_form()
 
+if __name__ == "__main__":
+    preencher_form()

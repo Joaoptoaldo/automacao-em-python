@@ -15,7 +15,6 @@ std = data.std()
 z_scores = np.abs((data - mean) / std)
 anomalias = data[z_scores > 2]
 
-logger = setup_logger('anomalias')
-log_info(logger, f'Dados: {data.tolist()}')
-log_info(logger, f'Anomalias: {anomalias.tolist()}')
-
+logger = setup_logger("anomalias")
+log_info(logger, f"Dados: {data.tolist()}")
+log_info(logger, f"Anomalias: {anomalias.tolist()}")

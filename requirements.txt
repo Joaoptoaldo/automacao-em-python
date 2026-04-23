@@ -12,7 +12,6 @@ streamlit==1.38.0
 python-dotenv==1.0.1
 schedule==1.2.2
 pytest==8.3.2
-pydrive2==1.19.4  # google drive
-
+pydrive2==1.20.0  # google drive
 flake8==7.0.0
 pytest-cov==5.0.0

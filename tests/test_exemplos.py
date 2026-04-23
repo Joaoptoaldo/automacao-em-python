@@ -10,7 +10,7 @@ import automacao_tarefas.renomear_arquivos as rename
 
 def test_helpers():
     """_summary_: método de teste para helpers.py"""
-    assert "log" in dir(log_info)
+    assert callable(log_info)
 
 
 def test_renomear():

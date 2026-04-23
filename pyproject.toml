@@ -5,6 +5,9 @@ exclude = '''
 /(\.git|\.venv|venv|build|dist)/
 '''
 
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
 [project]
 name = "automacao-em-python"
 version = "0.1.0"
@@ -15,3 +18,4 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = []
+

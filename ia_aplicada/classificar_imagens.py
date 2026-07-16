@@ -11,7 +11,7 @@ from PIL import Image
 from utils.helpers import setup_logger, log_info
 import sys
 
-model = models.resnet50(weights='DEFAULT')
+model = models.resnet50(weights="DEFAULT")
 model.eval()
 
 transform = transforms.Compose(

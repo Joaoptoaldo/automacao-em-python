@@ -29,7 +29,9 @@ def enviar_email(destino, assunto, corpo):
     msg.attach(MIMEText(corpo, "plain"))
 
     if not USER or not PASS:
-        log_info(logger, "Configure .env. Nao é possível autenticar no SMTP sem credenciais.")
+        log_info(
+            logger, "Configure .env. Nao é possível autenticar no SMTP sem credenciais."
+        )
         raise ValueError("Credenciais de email não encontradas no .env")
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
@@ -42,6 +44,8 @@ def enviar_email(destino, assunto, corpo):
 
 if __name__ == "__main__":
     try:
-        enviar_email("exemplo@email.com", "Relatorio Automatico", "Veja os dados anexos.")
+        enviar_email(
+            "exemplo@email.com", "Relatorio Automatico", "Veja os dados anexos."
+        )
     except Exception as e:
         print(f"Erro ao enviar email: {e}")

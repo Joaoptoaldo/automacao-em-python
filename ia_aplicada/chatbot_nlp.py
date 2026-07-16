@@ -22,7 +22,7 @@ def chatbot():
         user_input = input("Você: ")
         if user_input.lower() == "sair":
             break
-        resposta = generator(user_input, max_length=50, num_return_sequences=1)[0][
+        resposta = generator(user_input, max_new_tokens=50, num_return_sequences=1)[0][
             "generated_text"
         ]
         log_info(logger, f"Bot: {resposta}")

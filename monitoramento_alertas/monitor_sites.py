@@ -5,20 +5,17 @@ Monitora site e alerta se down.
 Uso: python monitor_sites.py
 """
 
+import time
 from logging import Logger
 
 import requests
 import schedule
-import time
+
 from utils.helpers import setup_logger, log_info
 
 
 def checar_site(url) -> None:
-    """_summary_: função para checar se um site está online. Faz uma requisição GET e verifica o status code. Se o site estiver down ou ocorrer um erro, um alerta é logado.
-
-    Args:
-        url (_type_): _description_: URL do site a ser monitorado
-    """
+    """Checa se um site esta online."""
     logger: Logger = setup_logger("monitor")
     try:
         resp: requests.Response = requests.get(url, timeout=5)
@@ -30,8 +27,16 @@ def checar_site(url) -> None:
         log_info(logger, f"ALERTA: {url} down - {e}")
 
 
-schedule.every(10).seconds.do(checar_site, "https://www.google.com")
+def iniciar_monitoramento(
+    url: str = "https://www.google.com", intervalo_segundos: int = 10
+) -> None:
+    """Agenda verificacoes periodicas sem executar no import do modulo."""
+    schedule.every(intervalo_segundos).seconds.do(checar_site, url)
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+
+if __name__ == "__main__":
+    iniciar_monitoramento()

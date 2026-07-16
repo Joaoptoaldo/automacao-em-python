@@ -7,7 +7,7 @@ Uso: python pipeline_ia.py
 
 from automacao_tarefas.web_scraping import scrape_headlines
 from ia_aplicada.analise_sentimentos import analisar_sentimento
-from automacao_escritorio.gerar_relatorios import gerar_pdf  # Adaptar
+from automacao_escritorio.gerar_relatorios import gerar_pdf
 from utils.helpers import setup_logger, log_info
 
 
@@ -20,7 +20,7 @@ def pipeline():
     for t in textos:
         analisar_sentimento(t)
     log_info(logger, "3. Gerar relatório...")
-    # chamar gerar_relatorios adaptado
+    gerar_pdf()
     log_info(logger, "Pipeline concluído! Veja relatorios.")
 
 

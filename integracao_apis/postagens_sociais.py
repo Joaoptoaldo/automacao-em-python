@@ -26,9 +26,8 @@ def post_tweet(texto):
     """
     logger = setup_logger("twitter")
     if not all([consumer_key, consumer_secret, access_token, access_token_secret]):
-        log_info(logger, "Configure chaves no .env. Modo simulado.")
-        log_info(logger, f"SIMULADO: Tweet: {texto}")
-        return
+        log_info(logger, "Configure chaves no .env. Falha ao postar.")
+        raise ValueError("Chaves do Twitter não configuradas.")
     client = tweepy.Client(
         consumer_key=consumer_key,
         consumer_secret=consumer_secret,

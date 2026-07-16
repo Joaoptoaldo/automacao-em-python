@@ -22,4 +22,3 @@ build/
 *.cover
 .coverage
 .coverage.*
-downloads/

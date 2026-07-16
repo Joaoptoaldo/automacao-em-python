@@ -21,6 +21,7 @@ def test_enviar_email_com_credenciais_mocks():
         mock_server.sendmail.assert_called_once()
         mock_server.quit.assert_called_once()
 
+
 def test_enviar_email_sem_credenciais():
     """Testa comportamento quando não há credenciais, deve lançar exceção."""
     with patch.object(email_module, "USER", None), patch.object(
